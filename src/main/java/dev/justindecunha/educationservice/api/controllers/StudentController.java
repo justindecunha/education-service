@@ -1,11 +1,14 @@
 package dev.justindecunha.educationservice.api.controllers;
 
 import dev.justindecunha.educationservice.domain.Student;
+import dev.justindecunha.educationservice.repositories.specifications.StudentFilter;
 import dev.justindecunha.educationservice.services.StudentService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/students")
@@ -26,6 +29,18 @@ public class StudentController {
         } catch (EntityNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping
+    List<Student> listStudents(@RequestParam(required = false) String name,
+                               @RequestParam(required = false) String course) {
+
+        StudentFilter studentFilter = StudentFilter.builder()
+                .name(name)
+                .course(course)
+                .build();
+
+        return studentService.findAll(studentFilter);
     }
 
     @PostMapping
