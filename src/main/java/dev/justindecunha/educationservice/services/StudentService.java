@@ -1,5 +1,6 @@
 package dev.justindecunha.educationservice.services;
 
+import dev.justindecunha.educationservice.domain.Student;
 import dev.justindecunha.educationservice.repositories.StudentRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +13,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
+    public Student createStudent(Student student) {
+        return studentRepository.save(student);
+    }
 }
