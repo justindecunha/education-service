@@ -56,4 +56,17 @@ public class StudentController {
         }
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id,
+                                                 @RequestBody Student updatedStudent) {
+        try {
+
+            Student savedStudent = studentService.updateStudent(id, updatedStudent);
+            return ResponseEntity.ok(savedStudent);
+
+        } catch (EntityNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
