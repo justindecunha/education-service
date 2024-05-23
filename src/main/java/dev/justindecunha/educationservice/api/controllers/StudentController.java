@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * A controller class to manage the /students REST API endpoints.
+ */
 @RestController
 @RequestMapping("/students")
 public class StudentController {

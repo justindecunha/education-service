@@ -10,6 +10,9 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * A JPA entity representing a student.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

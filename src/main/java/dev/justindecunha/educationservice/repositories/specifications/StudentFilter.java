@@ -9,6 +9,9 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A filter class to hold filtering criteria for the students collection.
+ */
 @Builder
 public class StudentFilter {
 

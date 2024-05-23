@@ -3,6 +3,9 @@ package dev.justindecunha.educationservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Entrypoint for the education service application.
+ */
 @SpringBootApplication
 public class EducationServiceApplication {
 
